@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  h3 {
+      text-shadow: -0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.8);
+  }
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card {
+    display: flex;
+/*    min-height: 70vh; */
+    width: 99vw;
+    jusity-content: space-between;
+    align-self: center;
+
+    form {
+        width: 100%;
+        font-size: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-top: 30vh;
+
+        input {
+            width: 20vw;
+            font-size: 2rem;
+            font-variant: small-caps;
+            outline: none;
+            &::placeholder {
+                text-align: center;
+            }
+        }
+        .status {
+            font-size: 2rem;
+            min-width: 10vw;
+            position: relative;
+            margin-left: -10vw;
+            color: red;
+            font-weight: bold;
+        }
+        .status_ok {
+            color: green;
+        }
+    }
+}
+
+
+.score {
+    position: absolute;
+    width: 99vw;
+    bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    font-size: 1.84rem;
+
+    label {
+        margin-right: 1rem;
+    }
+}
