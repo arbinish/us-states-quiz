@@ -49,16 +49,27 @@
     form {
         width: 100%;
         font-size: 2.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
+        display: grid;
+        grid-template-columns: 3fr 2fr 1fr;
+        /*flex-direction: row;
+        justify-content: space-evenly; */
+        margin: 0 auto;
         margin-top: 30vh;
 
+        & > * {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 0;
+        }
         input {
-            width: 20vw;
-            font-size: 2rem;
+            min-width: 20vw;
+            font-size: 1.5rem;
+            text-align: center;
             font-variant: small-caps;
             outline: none;
+            padding-left: 1rem;
+            border-radius: 100vh;
+            box-shadow: 0 0 1.6rem;
             &::placeholder {
                 text-align: center;
             }
@@ -77,7 +88,6 @@
     }
 }
 
-
 .score {
     position: absolute;
     width: 99vw;
@@ -89,4 +99,39 @@
     label {
         margin-right: 1rem;
     }
+}
+
+.report {
+    display: flex;
+    box-shadow: 0 0 2rem;
+    width: 10rem;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 100vh;
+    position: relative;
+    top: 30vh;
+    z-index: 100;
+
+    p {
+        padding: 0;
+        margin: 0;
+        font-size: 2em;
+        position: relative;
+    }
+
+    p.total::before {
+        content: '';
+        width: 2ch;
+        height: 0.2rem;
+        position: absolute;
+        background: black;
+        top: 0;
+        left: 0;
+    }
+}
+
+.report--title {
+    font-size: 2rem;
 }

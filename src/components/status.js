@@ -12,6 +12,12 @@ function Status({prop}) {
 
 
   const className = prop === true  ? "status status_ok" : "status"
+
+  if (prop === null) {
+    return (
+      <></>
+    )
+  }
   const logo = prop === true ? "✓" : "✗"
   return (
       <label className={className}>{logo}</label>

@@ -2,7 +2,8 @@ import './App.scss';
 import states from './states-capital.json';
 import Score from './components/score';
 import Card from './components/card';
-import { useState, useRef, useEffect, useMemo, useReducer } from 'react';
+import Report from './components/report';
+import { useRef, useEffect, useMemo, useReducer } from 'react';
 
 
 function App() {
@@ -27,14 +28,18 @@ function App() {
 
   const fn = useMemo(() => updateScore, [])
 
-
   return (
     <div className="App">
       <header className="App-header">
         <h3>US States Quiz</h3>
       </header>
-      <Card states={states} updateScore={fn}/>
-      <Score score={grade}/>
+      { grade.total >= 10 ? (
+        <Report score={grade.score} total={grade.total} />)  :
+         <>
+          <Card states={states} updateScore={fn}/>
+          <Score score={grade}/>
+        </>
+      }
     </div>
   );
 }
