@@ -9,6 +9,7 @@ function Card({ states, updateScore }) {
   const maxLength = states.length - 1;
 
   const getRandomQuestion = () => {
+    console.log('calling getRandomQuestion')
     if (history.current.length === (maxLength-1)) {
       history.current.splice(0, history.current.length)
     }
@@ -18,6 +19,7 @@ function Card({ states, updateScore }) {
       n = Math.round(Math.random() * maxLength)
     }
     history.current.push(n)
+    console.log('history length', history.current.length, 'history', history.current)
     return states[n]
   }
 
@@ -36,7 +38,7 @@ function Card({ states, updateScore }) {
 
   useEffect(() => {
     renderCount.current += 1
-    console.log('Card rendered', renderCount.current, 'times')
+    // console.log('Card rendered', renderCount.current, 'times')
   })
 
   const handleFormSubmit = (e) => {
@@ -68,7 +70,7 @@ function Card({ states, updateScore }) {
       <form onSubmit={handleFormSubmit}>
         <label>Name the capital city of {q.state}</label>
         <input type="text" ref={textRef} placeholder="capital city ..." onChange={verifyHandler}/>
-         <Status prop={status}/>
+         <Status prop={ status }/>
       </form>
     </div>
   );

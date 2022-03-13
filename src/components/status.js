@@ -1,7 +1,7 @@
 
 import { useRef, useEffect } from 'react';
 
-function Status({prop}) {
+function Status({ prop }) {
 
   let renderCount = useRef(0)
 

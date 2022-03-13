@@ -48,7 +48,7 @@
 
     form {
         width: 100%;
-        font-size: 2.5rem;
+        font-size: 2.1rem;
         display: grid;
         grid-template-columns: 3fr 2fr 1fr;
         /*flex-direction: row;
@@ -111,7 +111,7 @@
     justify-content: flex-end;
     border-radius: 100vh;
     position: relative;
-    top: 30vh;
+/*    top: 30vh; */
     z-index: 100;
 
     p {
@@ -130,8 +130,32 @@
         top: 0;
         left: 0;
     }
-}
 
-.report--title {
-    font-size: 2rem;
+    &--wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 30vh;
+        justify-content: space-around;
+        button {
+            font-variant: small-caps;
+            letter-spacing: 0.3rem;
+            font-size: 1.2rem;
+            width: 10rem;
+            padding: 0.8rem 1rem;
+            background: #282c34;
+            color: white;
+            margin: 0 auto;
+            transition: color 300ms, border 300ms;
+
+            &:hover {
+                font-weight: bold;
+                color: orange;
+                border: 3px solid orange;
+            }
+        }
+    }
+    &--title {
+        font-size: 2rem;
+    }
+
 }

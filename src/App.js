@@ -12,6 +12,9 @@ function App() {
     if (action.type === 'INC') {
       return {score: state.score + 1, total: state.total + 1}
     }
+    if (action.type === 'RESET') {
+      return { score: 0, total: 0 }
+    }
     return {score: state.score, total: state.total + 1}
   }, { score: 0, total: 0 })
 
@@ -27,6 +30,7 @@ function App() {
   })
 
   const fn = useMemo(() => updateScore, [])
+  const scoreReset = () => gradeDispatch({type: 'RESET'})
 
   return (
     <div className="App">
@@ -34,7 +38,7 @@ function App() {
         <h3>US States Quiz</h3>
       </header>
       { grade.total >= 10 ? (
-        <Report score={grade.score} total={grade.total} />)  :
+        <Report score={grade.score} total={grade.total} reset={scoreReset} />)  :
          <>
           <Card states={states} updateScore={fn}/>
           <Score score={grade}/>
