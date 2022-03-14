@@ -2,6 +2,72 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+
+  .score-stats {
+      --shadow: rgb(99, 92, 92);
+      
+      position: fixed;
+      top: 30%;
+      left: 30%;
+      width: 50%;
+      height: 50%;
+      font-size: 1.6rem;
+      z-index: 99;
+      background-color: rgba(0, 0, 0, 0.8);
+    //   box-shadow: -5rem 5rem var(--shadow), 5rem 5rem var(--shadow),
+    //                -5rem -5rem var(--shadow), 5rem -5rem var(--shadow);
+      border-radius: 1rem;
+      transition: display 1s;
+      ul {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          z-index: 100;
+          color: white;
+
+          li {
+              display: flex;
+            //   gap:1rem;
+              justify-content: center;
+              width: 70%;
+
+              & > * {
+                  width: 20%;
+              }
+              span.score-index {
+                  text-align: center;
+              }
+              span {
+                  text-align: left;
+                  &.score-val label {
+                      font-size: 1.3rem;
+                  }
+                  &.score-index  {
+                      font-size: 1.4rem;
+                      
+                  }
+              }
+          }
+          
+      }
+      span.close-stats {
+          position: absolute;
+          right:-1ch;
+          top:-1ch ;
+          display: inline-block;
+          color: orange;
+          background-color: black;
+          border-radius: 100vh;
+          border: 3px solid orange;
+          width: 2ch;
+          height: 2ch;
+          padding: 0.5ch;
+          cursor: pointer;
+      }
+  }
 }
 
 
@@ -15,7 +81,7 @@
   background-color: #282c34;
   min-height: 8vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -23,7 +89,15 @@
 
   h3 {
       text-shadow: -0.2rem 0.2rem 0.5rem rgba(255, 255, 255, 0.8);
+      flex-grow: 1;
   }
+
+  .stats {
+      margin-right: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+  }
+
 }
 
 .App-link {

@@ -6,7 +6,7 @@ function Report({ score, total, reset }) {
       <p>{score}</p>
       <p className="total">{total}</p>
     </div>
-     <button className="reset--game" onClick={reset}>Start</button>
+     <button className="reset--game" title="start new game" onClick={reset}>Start</button>
     </div>
   )
 }
